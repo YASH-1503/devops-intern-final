@@ -36,6 +36,15 @@ This repository demonstrates a small but realistic DevOps workflow using Linux, 
   chmod +x scripts/sysinfo.sh
   ./scripts/sysinfo.sh
   ```
+  Yash@Yash MINGW64 ~/Desktop/devops-intern-final/devops-intern-final (master)
+  $ ./scripts/sysinfo.sh
+  === System Info ===
+  User: Yash
+  Date: Wed Aug 20 23:48:58 IST 2025
+  Disk Usage:
+  Filesystem Size Used Avail Use% Mounted on
+  C:/Program Files/Git 226G 193G 34G 86% /
+  D: 250G 175G 76G 70% /d
 
 **Output:** `scripts/sysinfo.sh` working and prints system info.
 
