@@ -1,0 +1,16 @@
+# Loki + Promtail Setup Notes
+
+## Start Loki
+docker network create observability || true
+
+docker run -d --name=loki --network=observability -p 3100:3100 \  grafana/loki:2.9.0 -config.file=/etc/loki/local-config.yaml
+
+## Start Promtail (scrapes Docker logs)
+docker run -d --name=promtail --network=observability \  -v /var/lib/docker/containers:/var/lib/docker/containers:ro \  -v $(pwd)/monitoring/promtail-config.yml:/etc/promtail/config.yml:ro \  grafana/promtail:2.9.0 -config.file=/etc/promtail/config.yml
+
+## Query logs using logcli
+docker run --rm --network=observability grafana/logcli:2.9.0 \  --addr=http://loki:3100 query --limit=50 '{{label="docker"}}'
+
+# Optional: Grafana UI
+docker run -d --name=grafana --network=observability -p 3000:3000 grafana/grafana:10.4.2
+# Add a Loki datasource pointing to http://loki:3100 and view logs in Explore.
