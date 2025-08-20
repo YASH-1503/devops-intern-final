@@ -7,7 +7,7 @@ This repository demonstrates a small but realistic DevOps workflow using Linux, 
 
 ---
 
-## Repository Structure
+## 1) Repository Structure
 
 ```
 .
