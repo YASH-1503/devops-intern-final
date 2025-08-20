@@ -30,16 +30,16 @@ This repository demonstrates a small but realistic DevOps workflow using Linux, 
 
 ## 2) Linux & Scripting Basics
 
-The script [`scripts/sysinfo.sh`](scripts/sysinfo.sh) displays the current user, date, and disk usage.
+The script [`scripts/sysinfo.sh`](scripts/sysinfo.sh) prints the current user, date, and disk usage.
 
-**To run the script:**
+**How to run:**
 
 ```bash
 chmod +x scripts/sysinfo.sh   # Make the script executable (run once)
 ./scripts/sysinfo.sh          # Execute the script
 ```
 
-**Sample Output:**
+**Example Output:**
 
 ```
 === System Info ===
@@ -51,25 +51,41 @@ C:/Program Files/Git 226G  193G   34G  86% /
 D:                   250G  175G   76G  70% /d
 ```
 
-> **Note:**  
-> Output may vary depending on your OS and environment (Linux, WSL, or Git Bash on Windows).
+> **Note:** Output may vary depending on your OS and environment (Linux, WSL, or Git Bash on Windows).
 
 **Result:**  
-`scripts/sysinfo.sh` runs successfully and prints the system information.
+`scripts/sysinfo.sh` runs successfully and prints system information.
 
 ---
 
 ## 3) Docker Basics
 
-- Build and run:
-  ```bash
-  docker build -t hello-devops:latest .
-  docker run --rm hello-devops:latest
-  ```
+Build and run the Docker container:
 
-You should see: `Hello, DevOps!`
+```bash
+docker build -t hello-devops:latest .
+docker run --rm hello-devops:latest
+```
 
-**Output:** Dockerfile + proof container works.
+**Expected Output:**
+
+```
+Hello, DevOps!
+```
+
+**Proof:**
+
+```
+$ docker build -t hello-devops:latest .
+...
+Successfully tagged hello-devops:latest
+
+$ docker run --rm hello-devops:latest
+Hello, DevOps!
+```
+
+**Output:**  
+Dockerfile is present and the container prints the expected output.
 
 ---
 
