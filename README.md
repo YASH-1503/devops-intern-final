@@ -28,23 +28,6 @@ This repository demonstrates a small but realistic DevOps workflow using Linux, 
 
 ---
 
-## 1) Git & GitHub Setup
-
-1. Create a new **public** repository on GitHub (e.g., `devops-intern-final`).
-2. Initialize locally and push:
-   ```bash
-   git init
-   git remote add origin git@github.com:OWNER/REPO.git
-   git add .
-   git commit -m "Initial commit: DevOps Intern Final Assessment"
-   git branch -M main
-   git push -u origin main
-   ```
-
-**Output:** Repo initialized with README and sample script.
-
----
-
 ## 2) Linux & Scripting Basics
 
 - Script: `scripts/sysinfo.sh` prints current user, date, and disk usage.
@@ -112,6 +95,7 @@ The workflow runs `python hello.py` on every push.
 This setup runs Loki and Promtail via Docker and forwards **Docker container logs** into Loki.
 
 ### Start Loki
+
 ```bash
 docker network create observability || true
 
@@ -119,6 +103,7 @@ docker run -d --name=loki --network=observability -p 3100:3100   grafana/loki:2.
 ```
 
 ### Start Promtail (scrapes Docker logs)
+
 > Linux hosts usually keep JSON logs at `/var/lib/docker/containers`. Adjust the mount if your Docker logs are elsewhere.
 
 ```bash
@@ -126,11 +111,13 @@ docker run -d --name=promtail --network=observability   -v /var/lib/docker/conta
 ```
 
 ### View logs from Loki using logcli
+
 ```bash
 docker run --rm --network=observability grafana/logcli:2.9.0   --addr=http://loki:3100 query --limit=50 '{label="docker"}'
 ```
 
 Alternative: run Grafana UI (optional):
+
 ```bash
 docker run -d --name=grafana --network=observability -p 3000:3000 grafana/grafana:10.4.2
 # Then add a Loki datasource pointing to http://loki:3100 and use Explore to view logs.
@@ -143,6 +130,7 @@ docker run -d --name=grafana --network=observability -p 3000:3000 grafana/grafan
 ## 7) Extra Credit (Optional)
 
 - **MLflow** (dummy experiment scaffold):
+
   ```bash
   python -c "import mlflow; mlflow.set_experiment('demo'); run=mlflow.start_run(); mlflow.log_param('p','v'); mlflow.log_metric('m',1.23); mlflow.end_run()"
   ```
