@@ -174,9 +174,3 @@ docker run -d --name=grafana --network=observability -p 3000:3000 grafana/grafan
 - **VM Option:** Run Docker/Nomad inside a small VM (VirtualBox/Vagrant) and point Promtail to VM Docker logs.
 
 ---
-
-## Notes
-
-- Replace `OWNER/REPO` above with your actual GitHub path so the badge renders.
-- All commands are tested on Linux (or WSL2). On macOS/Windows paths may differ.
-- Nomad job expects the local image tag `hello-devops:latest`. Push to a registry if running Nomad on a remote node.
