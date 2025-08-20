@@ -1,9 +1,11 @@
 # DevOps Intern Final Assessment
 
+[![CI](https://github.com/YASH-1503/devops-intern-final/actions/workflows/ci.yml/badge.svg)](https://github.com/YASH-1503/devops-intern-final/actions/workflows/ci.yml)
+
 **Name:** Yash Jain  
 **Date:** 2025-08-20
 
-This repository demonstrates a small but realistic DevOps workflow using Linux, Git/GitHub, Docker, CI/CD with GitHub Actions, Nomad for job orchestration, and basic log monitoring using Grafana Loki + Promtail.
+This repository ([YASH-1503/devops-intern-final](https://github.com/YASH-1503/devops-intern-final)) demonstrates a small but realistic DevOps workflow using Linux, Git/GitHub, Docker, CI/CD with GitHub Actions, Nomad for job orchestration, and basic log monitoring using Grafana Loki + Promtail.
 
 ---
 
