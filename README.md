@@ -30,23 +30,32 @@ This repository demonstrates a small but realistic DevOps workflow using Linux, 
 
 ## 2) Linux & Scripting Basics
 
-- Script: `scripts/sysinfo.sh` prints current user, date, and disk usage.
-- Make it executable and run:
-  ```bash
-  chmod +x scripts/sysinfo.sh
-  ./scripts/sysinfo.sh
-  ```
-  Yash@Yash MINGW64 ~/Desktop/devops-intern-final/devops-intern-final (master)
-  $ ./scripts/sysinfo.sh
-  === System Info ===
-  User: Yash
-  Date: Wed Aug 20 23:48:58 IST 2025
-  Disk Usage:
-  Filesystem Size Used Avail Use% Mounted on
-  C:/Program Files/Git 226G 193G 34G 86% /
-  D: 250G 175G 76G 70% /d
+The script [`scripts/sysinfo.sh`](scripts/sysinfo.sh) displays the current user, date, and disk usage.
 
-**Output:** `scripts/sysinfo.sh` working and prints system info.
+**To run the script:**
+
+```bash
+chmod +x scripts/sysinfo.sh   # Make the script executable (run once)
+./scripts/sysinfo.sh          # Execute the script
+```
+
+**Sample Output:**
+
+```
+=== System Info ===
+User: Yash
+Date: Wed Aug 20 23:48:58 IST 2025
+Disk Usage:
+Filesystem           Size  Used Avail Use% Mounted on
+C:/Program Files/Git 226G  193G   34G  86% /
+D:                   250G  175G   76G  70% /d
+```
+
+> **Note:**  
+> Output may vary depending on your OS and environment (Linux, WSL, or Git Bash on Windows).
+
+**Result:**  
+`scripts/sysinfo.sh` runs successfully and prints the system information.
 
 ---
 
