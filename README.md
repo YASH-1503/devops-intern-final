@@ -96,7 +96,7 @@ The workflow runs `python hello.py` on every push.
 - After pushing, add this badge to the top of the README (already included below).  
   Replace `OWNER/REPO` with your GitHub org/user and repo name.
 
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/YASH-1503/devops-intern-final/actions/workflows/ci.yml/badge.svg)](https://github.com/YASH-1503/devops-intern-final/actions/workflows/ci.yml)
 
 **Output:** Working CI pipeline visible on your repo.
 
